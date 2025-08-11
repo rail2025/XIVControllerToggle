@@ -60,14 +60,14 @@ public class DebugWindow : Window, IDisposable {
 
         gameConfig.TryGet(SystemConfigOption.UiHighScale, out uint cfgUiHighScale);
 
-        ImGui.Text($"Config UI High scale: {cfgUiHighScale}");
+        ImGui.TextUnformattedUnformatted($"Config UI High scale: {cfgUiHighScale}");
 
 
-        ImGui.Text($"LEFT - X: {gp.LeftStick.X.abs()}, Y: {gp.LeftStick.Y.abs()}.");
-        ImGui.Text($"RIGHT - X: {gp.RightStick.X.abs()}, Y: {gp.RightStick.Y.abs()}.");
+        ImGui.TextUnformatted($"LEFT - X: {gp.LeftStick.X.abs()}, Y: {gp.LeftStick.Y.abs()}.");
+        ImGui.TextUnformatted($"RIGHT - X: {gp.RightStick.X.abs()}, Y: {gp.RightStick.Y.abs()}.");
 
-        ImGui.Text($"KB W:{ks[VK.W]}, S:{ks[VK.S]}, A:{ks[VK.A]}, D:{ks[VK.D]}.");
-        ImGui.Text($"Can Swap (Timeout): {(Plugin.SwapTimeout <= DateTime.Now)}");
+        ImGui.TextUnformatted($"KB W:{ks[VK.W]}, S:{ks[VK.S]}, A:{ks[VK.A]}, D:{ks[VK.D]}.");
+        ImGui.TextUnformatted($"Can Swap (Timeout): {(Plugin.SwapTimeout <= DateTime.Now)}");
 
 #if DEBUG
         ImGui.Spacing();
