@@ -9,7 +9,7 @@
         <PackageProjectUrl>https://github.com/rail2025/XIVControllerToggle</PackageProjectUrl>
         <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
         <IsPackable>false</IsPackable>
-		<OutputPath>..\Build\XIVControllerToggle\</OutputPath>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
 		<TargetFramework>net9.0-windows7.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
