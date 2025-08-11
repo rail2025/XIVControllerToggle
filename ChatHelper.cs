@@ -77,7 +77,7 @@ namespace TPie.Helpers {
             var payload = MessagePayload(text, length);
 
             ChatDelegate chatDelegate = Marshal.GetDelegateForFunctionPointer<ChatDelegate>(_chatModulePtr);
-            chatDelegate.Invoke(Plugin.GameGui.GetUIModule(), payload, IntPtr.Zero, (byte)0);
+            chatDelegate.Invoke(Plugin.GameGui.GetUIModule().Address, payload, IntPtr.Zero, (byte)0);
 
             Marshal.FreeHGlobal(payload);
             Marshal.FreeHGlobal(text);
