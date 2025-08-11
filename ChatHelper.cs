@@ -41,10 +41,10 @@ namespace TPie.Helpers {
             var framework = Framework.Instance();
             if (framework == null) { return false; }
 
-            var uiModule = Plugin.GameGui.GetUIModule();
-if (uiModule.IsNull) { return false; }
+            var module = framework->GetUIModule();
+            if (module == null) { return false; }
 
-var atkModule = (AtkModule*)((FFXIVClientStructs.FFXIV.Client.UI.UIModule*)uiModule.Address)->GetRaptureAtkModule();
+            var atkModule = module->GetRaptureAtkModule();
             if (atkModule == null) { return false; }
 
             return atkModule->AtkModule.IsTextInputActive();
