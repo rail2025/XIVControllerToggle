@@ -37,13 +37,13 @@ public class ConfigWindow : Window, IDisposable {
     public override void Draw() {
         ImGuiExtensions.ImguiCheckbox("Enable KB / Pad Switching on movement", () => Plugin.PluginConfig.Enabled, (v) => Plugin.PluginConfig.Enabled = v);
 
-        ImGui.Text("Switch to Pad Crossbars on: "); ImGui.SameLine();
+        ImGui.TextUnformatted("Switch to Pad Crossbars on: "); ImGui.SameLine();
         ImGuiExtensions.ImguiRadioButton("LS",   "SPCB", () => Plugin.PluginConfig.ControllerSticks == ControllerSticks.LS,   () => Plugin.PluginConfig.ControllerSticks = ControllerSticks.LS, sameLine: true);
         ImGuiExtensions.ImguiRadioButton("RS",   "SPCB", () => Plugin.PluginConfig.ControllerSticks == ControllerSticks.RS,   () => Plugin.PluginConfig.ControllerSticks = ControllerSticks.RS, sameLine: true);
         ImGuiExtensions.ImguiRadioButton("Both", "SPCB", () => Plugin.PluginConfig.ControllerSticks == ControllerSticks.Both, () => Plugin.PluginConfig.ControllerSticks = ControllerSticks.Both, sameLine: false);
 
         int stickDeadzone = Plugin.PluginConfig.StickDeadzone;
-        ImGui.Text("Stick: Switching threashold"); ImGui.SameLine();
+        ImGui.TextUnformatted("Stick: Switching threashold"); ImGui.SameLine();
         if (ImGui.DragInt("##StickDeadzone", ref stickDeadzone, 1, 1, 100)) {
             Plugin.PluginConfig.StickDeadzone = stickDeadzone;
             Plugin.PluginConfig.Save();
@@ -142,7 +142,7 @@ public class ConfigWindow : Window, IDisposable {
 
                 // Column 0: label
                 ImGui.TableSetColumnIndex(0);
-                ImGui.Text(label);
+                ImGui.TextUnformatted(label);
 
                 // Column 2: text field
                 ImGui.TableSetColumnIndex(1);
