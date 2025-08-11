@@ -76,7 +76,7 @@ namespace XIVControllerToggle {
 
             Framework.Update += Update;
             PluginInterface.UiBuilder.Draw += DrawUI;
-            PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
+            //PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
 
             ChatHelper.Initialize();
         }
